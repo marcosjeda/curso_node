@@ -1,0 +1,1 @@
+# Carpeta para mantener adjuntos resultantes de la app

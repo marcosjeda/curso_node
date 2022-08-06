@@ -4,10 +4,10 @@ const router        = Router();
 // Importaciones internas
 const usuarioControl = require("../controllers/users.controller");
 
-router.get('/holi', usuarioControl.usuarioGet);
-router.post('/holi', usuarioControl.usuarioPost);
-router.put('/holi', usuarioControl.usuarioPut);
-router.delete('/holi', usuarioControl.usuarioDel);
-router.patch('/holi', usuarioControl.usuarioPat);
+router.get('/', usuarioControl.usuarioGet);
+router.post('/', usuarioControl.usuarioPost);
+router.put('/:id', usuarioControl.usuarioPut);
+router.delete('/', usuarioControl.usuarioDel);
+router.patch('/', usuarioControl.usuarioPat);
 
 module.exports = router;

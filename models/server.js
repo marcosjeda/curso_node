@@ -24,6 +24,10 @@ class server {
     middleware () {
         // Se establece el middleware cors
         this.app.use( cors() );
+
+        // Lectura y parseo de informacion de la peticion
+        this.app.use( express.json() );
+
         this.app.use( express.static('./public') );
     }
 

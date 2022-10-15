@@ -1,10 +1,14 @@
 const express   = require('express');
 const cors      = require('cors');
 
+const dbConexion = require('../db/config');
+
 class server {
     constructor () {
         this.app    = express();
         this.port   = process.env.PORT;
+        // Conexión a la BD
+        this.conectarBD();
 
         // Inicio del middleware
         this.middleware();
@@ -19,6 +23,10 @@ class server {
         
         // Entrega de las rutas al manejador para su procesamiento
         this.routes(rutas);
+    }
+
+    async conectarBD() {
+        await dbConexion();
     }
 
     middleware () {

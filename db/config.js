@@ -11,7 +11,8 @@ const dbConexion = async () => {
 
         console.log('BD conectada correctamente');
     } catch (error) {
-        console.error("Error: No se pudo conectar a la BD\n - ", error);
+        console.error(`Error: No se pudo conectar a la BD\n - 
+        ${ process.env.MONGO_CNN }://${ process.env.DB_USER }:${ process.env.DB_PASS }@${ process.env.DB_HOST }/${ process.env.DB_NAME } \n`, error);
     }
 }
 

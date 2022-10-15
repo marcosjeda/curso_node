@@ -83,6 +83,7 @@ const usuarioController = {
 
         // Eliminación simbólica
         const usuario = await Usuario.findByIdAndUpdate( id, { estado: false } );
+
         rs.json({
             estado: true,
             mensaje: 'Usuario eliminado correctamente',

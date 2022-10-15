@@ -1,5 +1,6 @@
 const Role          = require("../models/role.model");
 const Usuario       = require("../models/user.model");
+const { Types }   = require("mongoose");
 
 const isValidRole = async (rol = '') => {
 
@@ -30,6 +31,11 @@ const emailExists = async (email = '') => {
 const userExists = async (id = '') => {
 
     if (id === '') {
+        return;
+    }
+
+    // Para que no devuelva error en caso de id no válida (Ya existe esa validacion)
+    if (!Types.ObjectId.isValid(id)) {
         return;
     }
 
